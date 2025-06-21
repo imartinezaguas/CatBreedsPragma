@@ -15,12 +15,14 @@ export class HomePage implements OnInit {
 
   public cats: CatsBreed[] = [];
   showScrollButton = false;
+  loading = true;
   @ViewChild(IonContent) content!: IonContent;
 
   ngOnInit() {
     this.catsService.getBreeds().subscribe((data) => {
       console.log(data);
       this.cats.push(...data);
+      this.loading = false;
     });
   }
 
