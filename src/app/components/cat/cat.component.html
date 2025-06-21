@@ -1,0 +1,29 @@
+<ion-card class="cat-card">
+  <ion-card-subtitle class="ion-margin-bottom">
+    <ion-row class="ion-align-items-center">
+      <ion-col>
+        <span class="ion-text-uppercase ion-text-bold ion-text-large">{{ cat.name }}</span>
+      </ion-col>
+      <ion-col class="ion-text-right">
+        <ion-button (click)="openDescription()" fill="clear" size="small">
+          More...
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-card-subtitle>
+
+  <ion-img *ngIf="cat.image?.url" [src]="cat.image.url" class="cat-img"></ion-img>
+
+  <ion-card-content>
+    <ion-row class="ion-padding-top ion-justify-content-between">
+      <ion-col size="6">
+        <strong>origin</strong><br />
+        <span>{{ cat.origin }}</span>
+      </ion-col>
+      <ion-col size="6">
+        <strong>intelligence</strong><br />
+        <span>{{ cat.intelligence }}</span>
+      </ion-col>
+    </ion-row>
+  </ion-card-content>
+</ion-card>
