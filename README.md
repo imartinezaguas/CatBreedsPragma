@@ -37,9 +37,15 @@ Puedes descargar y probar la APK aquí:
 - **API TheCatAPI.com**
 - **ESLint**
 - **Android studio**
+- **Capacitor**
 
 ---
 
+## 🧪 Testing
+Testeé el servicio catsBreeds: Se crearon pruebas unitarias usando Jasmine/Karma
+para verificar que las peticiones HTTP al API de razas de gatos (catsBreeds) retornaran los datos correctamente
+
+---
 ## 📋 Requisitos Cumplidos
 
 ✅ Integración con API pública  
