@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment.prod';
 import { CatsBreed } from '../interface/cats';
-import { map, Observable, of } from 'rxjs';
+import { catchError, map, Observable, of, throwError } from 'rxjs';
 
 const apiKey = environment.apiKey;
 const apiUrl = environment.apiUrl;
@@ -27,7 +27,12 @@ export class CatsService {
         api_key: apiKey,
         ...params,
       },
-    });
+    }).pipe(
+      catchError(error => {
+        console.log('Error when load the API',error);
+        return throwError(() => Error('Fail'))
+      })
+    );
   }
 
   public getBreeds(loadMore: boolean = false): Observable<CatsBreed[]> {
