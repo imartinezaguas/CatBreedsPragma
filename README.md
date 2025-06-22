@@ -35,7 +35,6 @@ Puedes descargar y probar la APK aquí:
 - **Ionic Framework**
 - **RxJS**
 - **API TheCatAPI.com**
-- **ESLint**
 - **Android studio**
 - **Capacitor**
 
