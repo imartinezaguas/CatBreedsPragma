@@ -1,8 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { CatsService } from '../services/cats.service';
-import { CatsBreed } from '../interface/cats';
+import { CatsService } from '../../services/cats.service';
+import { CatsBreed } from '../../interface/cats';
 import { IonContent } from '@ionic/angular';
-import { API_LIMIT } from '../constants/api.constants';
+import { API_LIMIT } from '../../constants/api.constants';
 
 
 @Component({
@@ -21,7 +21,6 @@ export class HomePage implements OnInit {
 
   ngOnInit() {
     this.catsService.getBreeds().subscribe((data) => {
-      console.log(data);
       this.cats.push(...data);
       this.loading = false;
     });
@@ -30,7 +29,7 @@ export class HomePage implements OnInit {
   loadMoreBreeds(event: any) {
     this.catsService.getBreeds(true).subscribe((data) => {
       this.cats.push(...data);
-
+      console.log(this.cats)
       event.target.complete();
 
       if (data.length < API_LIMIT ) {

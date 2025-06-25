@@ -52,7 +52,7 @@ export class CatsService {
 
         this.catsByPage = {
           page: nextPage + 1,
-          breeds: [...breeds],
+          breeds: [...this.catsByPage.breeds, ...breeds],
         };
 
         return breeds;

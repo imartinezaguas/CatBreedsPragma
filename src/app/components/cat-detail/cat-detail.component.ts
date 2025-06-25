@@ -4,10 +4,11 @@ import { CatsService } from 'src/app/services/cats.service';
 import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
 import { CatsBreed } from 'src/app/interface/cats';
+import { ImageFallbackPipe } from 'src/app/pipes/image-fallback.pipe';
 
 @Component({
   selector: 'app-cat-detail',
-  imports:[CommonModule,IonicModule],
+  imports:[CommonModule,IonicModule,ImageFallbackPipe],
   templateUrl: './cat-detail.component.html',
   styleUrls: ['./cat-detail.component.scss'],
 })

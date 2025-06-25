@@ -7,11 +7,10 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-img
-  *ngIf="cat?.image?.url"
-  [src]="cat.image.url"
-  class="detail-img"
-></ion-img>
+  <ion-img
+    [src]="cat.image | imageFallback"
+     class="detail-img">
+  </ion-img>
 
 <ion-content>
   <ion-list>
