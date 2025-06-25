@@ -11,6 +11,7 @@ const apiUrl = environment.apiUrl;
   providedIn: 'root',
 })
 export class CatsService {
+
   private catsByPage: {
     page: number;
     breeds: CatsBreed[];
@@ -51,10 +52,10 @@ export class CatsService {
 
         this.catsByPage = {
           page: nextPage + 1,
-          breeds: [...this.catsByPage.breeds, ...breeds],
+          breeds: [...breeds],
         };
 
-        return this.catsByPage.breeds;
+        return breeds;
       })
     );
   }

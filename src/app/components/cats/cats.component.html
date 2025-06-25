@@ -3,14 +3,14 @@
 <ion-grid fixed>
   <ion-row>
     <ion-col
-      *ngFor="let cat of filteredCats; let i = index"
+      *ngFor="let cat of filteredCats; "
       size="12"
       size-lg="3"
       size-md="4"
       size-sm="6"
       size-xs="12"
     >
-      <app-cat [cat]="cat" [index]="i + 1"></app-cat>
+      <app-cat [cat]="cat"></app-cat>
     </ion-col>
   </ion-row>
 </ion-grid>

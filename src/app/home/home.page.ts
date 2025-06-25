@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { CatsService } from '../services/cats.service';
 import { CatsBreed } from '../interface/cats';
 import { IonContent } from '@ionic/angular';
+import { API_LIMIT } from '../constants/api.constants';
 
 
 @Component({
@@ -32,7 +33,7 @@ export class HomePage implements OnInit {
 
       event.target.complete();
 
-      if (data.length >= this.cats.length) {
+      if (data.length < API_LIMIT ) {
         event.target.disabled = true;
       }
     });

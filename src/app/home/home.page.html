@@ -13,6 +13,7 @@
 </ion-loading>
 
 <ion-content (ionScroll)="handleScroll($event)" scrollEvents="true">
+
   <app-cats [cats]="cats"></app-cats>
 
   <ion-infinite-scroll threshold="100px" (ionInfinite)="loadMoreBreeds($event)">
