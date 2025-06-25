@@ -29,7 +29,7 @@ export class HomePage implements OnInit {
   loadMoreBreeds(event: any) {
     this.catsService.getBreeds(true).subscribe((data) => {
       this.cats.push(...data);
-      console.log(this.cats)
+
       event.target.complete();
 
       if (data.length < API_LIMIT ) {
