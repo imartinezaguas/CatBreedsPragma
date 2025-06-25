@@ -40,7 +40,7 @@ Puedes descargar y probar la APK aquí:
 
 ---
 
-## 🧱 Arquitectura del Proyecto
+## 🧱 Estructura de carpetas
 
 Este proyecto utiliza una **estructura por carpetas técnicas**, un estilo arquitectónico común y práctico en aplicaciones desarrolladas con Ionic + Angular. El código está organizado según el **tipo de responsabilidad**, lo que facilita su mantenimiento en proyectos pequeños y medianos.
 
