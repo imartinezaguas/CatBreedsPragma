@@ -40,9 +40,33 @@ Puedes descargar y probar la APK aquí:
 
 ---
 
+## 🧱 Arquitectura del Proyecto
+
+Este proyecto utiliza una **estructura por carpetas técnicas**, un estilo arquitectónico común y práctico en aplicaciones desarrolladas con Ionic + Angular. El código está organizado según el **tipo de responsabilidad**, lo que facilita su mantenimiento en proyectos pequeños y medianos.
+
+**Principales carpetas:**
+
+- `components/` – Componentes reutilizables de la interfaz  
+- `constants/` – Constantes globales de la aplicación  
+- `interface/` – Interfaces y modelos de datos en TypeScript  
+- `pages/` – Vistas y pantallas principales de la app  
+- `pipes/` – Pipes personalizados para transformación de datos  
+- `services/` – Lógica de negocio e integración con APIs
+
+> 📝 A medida que el proyecto crece, esta estructura permite una transición gradual hacia una arquitectura modular o limpia sin perder claridad ni mantenibilidad.
+
+---
+
 ## 🧪 Testing
 Testeé el servicio catsBreeds: Se crearon pruebas unitarias usando Jasmine/Karma
 para verificar que las peticiones HTTP al API de razas de gatos (catsBreeds) retornaran los datos correctamente
+
+```bash
+
+# Ejeucta el Test Runner
+ng test
+
+```
 
 ---
 ## 📋 Requisitos Cumplidos

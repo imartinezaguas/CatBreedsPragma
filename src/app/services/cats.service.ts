@@ -29,9 +29,8 @@ export class CatsService {
         ...params,
       },
     }).pipe(
-      catchError(error => {
-        console.log('Error when load the API',error);
-        return throwError(() => Error('Fail'))
+      catchError(error => {;
+        return throwError(() => Error(`Error when querying the API Breeds: ${error}`))
       })
     );
   }
