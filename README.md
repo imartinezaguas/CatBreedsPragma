@@ -15,7 +15,7 @@ Esta aplicación fue desarrollada como parte de un proyecto para mostrar distint
 ## 🔗 Demo en Vivo
 
 Puedes descargar y probar la APK aquí:  
-📦 [Descargar APK desde Google Drive](https://drive.google.com/file/d/1bl3yi9kdgJ2yCTJuHYYN4tq7iAlEAPGq/view?usp=drive_link)
+📦 [Descargar APK desde Google Drive](https://drive.google.com/file/d/1bvHu8EdzV_OznPlFbWM11WjnA-0aqmNd/view?usp=drive_link)
 
 ---
 
