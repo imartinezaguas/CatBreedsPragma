@@ -58,8 +58,9 @@ Este proyecto utiliza una **estructura por carpetas técnicas**, un estilo arqui
 ---
 
 ## 🧪 Testing
-Testeé el servicio catsBreeds: Se crearon pruebas unitarias usando Jasmine/Karma
-para verificar que las peticiones HTTP al API de razas de gatos (catsBreeds) retornaran los datos correctamente
+Se crearon pruebas unitarias usando Jasmine/Karma en un 90%
+para verificar que las peticiones HTTP al API de razas de gatos (catsBreeds) retornaran los datos correctamente y
+Verficar los componentes usados en la app.
 
 ```bash
 

@@ -7,18 +7,31 @@ describe('FilterBreedsComponent', () => {
   let component: FilterBreedsComponent;
   let fixture: ComponentFixture<FilterBreedsComponent>;
 
-  beforeEach(waitForAsync(() => {
-    TestBed.configureTestingModule({
-      declarations: [ FilterBreedsComponent ],
-      imports: [IonicModule.forRoot()]
+beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      imports: [FilterBreedsComponent]
     }).compileComponents();
 
     fixture = TestBed.createComponent(FilterBreedsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
-  }));
+  });
 
-  it('should create', () => {
+  it('debería crear el componente', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('debería emitir el término de búsqueda cuando se llama handleInput()', () => {
+    spyOn(component.onSearch, 'emit');
+
+    const fakeEvent = {
+      detail: {
+        value: '  gato '
+      }
+    };
+
+    component.handleInput(fakeEvent);
+
+    expect(component.onSearch.emit).toHaveBeenCalledWith('gato');
   });
 });

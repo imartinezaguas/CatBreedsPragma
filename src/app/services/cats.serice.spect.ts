@@ -19,8 +19,8 @@ fdescribe('CatsService', () => {
 
   it('should fetch cat breeds from API on first call', () => {
     service.getBreeds().subscribe((breeds) => {
-      expect(breeds.length).toBe(2); // Verify elements
-      expect(service['catsByPage'].page).toBe(1); // Verify increment page
+      expect(breeds.length).toBe(2);
+      expect(service['catsByPage'].page).toBe(1);
     });
   });
 
