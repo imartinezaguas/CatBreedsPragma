@@ -27,12 +27,12 @@ export class HomePage implements OnInit {
   }
 
   loadMoreBreeds(event: any) {
-    this.catsService.getBreeds(true).subscribe((data) => {
-      this.cats.push(...data);
+    this.catsService.getBreeds().subscribe((data) => {
+        this.cats.push(...data);
 
       event.target.complete();
 
-      if (data.length < API_LIMIT ) {
+      if (data.length <= API_LIMIT ) {
         event.target.disabled = true;
       }
     });

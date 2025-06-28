@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment.prod';
 import { CatsBreed } from '../interface/cats';
 import { catchError, map, Observable, of, throwError } from 'rxjs';
+import { API_LIMIT_ITEMS, API_PAGINATION } from '../constants/api.constants';
 
 const apiKey = environment.apiKey;
 const apiUrl = environment.apiUrl;
@@ -21,7 +22,7 @@ export class CatsService {
   };
 
   constructor(private http: HttpClient) {}
-
+  // Se puede usar un interceptor
   private executeQuery<T>(endpoint: string, params?: any): Observable<T> {
     return this.http.get<T>(`${apiUrl}${endpoint}`, {
       params: {
@@ -35,22 +36,16 @@ export class CatsService {
     );
   }
 
-  public getBreeds(loadMore: boolean = false): Observable<CatsBreed[]> {
-    if (!loadMore && this.catsByPage.breeds.length > 0) {
-      return of(this.catsByPage.breeds);
-    }
-
-    const nextPage = this.catsByPage.page;
+  public getBreeds(): Observable<CatsBreed[]> {
 
     return this.executeQuery<CatsBreed[]>('/breeds', {
-      limit: 10,
-      page: nextPage,
+      limit: API_LIMIT_ITEMS,
+      page: this.catsByPage.page,
     }).pipe(
       map((breeds: CatsBreed[]) => {
-        if (breeds.length === 0) return this.catsByPage.breeds;
 
         this.catsByPage = {
-          page: nextPage + 1,
+          page: this.catsByPage.page + API_PAGINATION,
           breeds: [...this.catsByPage.breeds, ...breeds],
         };
 

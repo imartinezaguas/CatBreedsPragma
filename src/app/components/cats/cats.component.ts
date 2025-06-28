@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, OnInit, SimpleChanges  } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, OnChanges, OnInit, SimpleChanges  } from '@angular/core';
 import {
   IonCol,
   IonRow,
@@ -11,12 +11,13 @@ import { FilterBreedsComponent } from '../filter-breeds/filter-breeds.component'
 
 @Component({
   selector: 'app-cats',
+  // changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [IonCol, IonRow, IonGrid,CatComponent,CommonModule,FilterBreedsComponent],
   templateUrl: './cats.component.html',
   styleUrls: ['./cats.component.scss'],
 })
 export class CatsComponent  implements OnChanges, OnInit {
-
+ // se puede cambiar por signals
   @Input() cats : CatsBreed[] = [];
   filteredCats: CatsBreed[] = [];
   showScrollButton = false;

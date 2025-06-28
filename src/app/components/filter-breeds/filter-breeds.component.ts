@@ -9,7 +9,7 @@ import { IonicModule } from '@ionic/angular';
   styleUrls: ['./filter-breeds.component.scss'],
 })
 export class FilterBreedsComponent  {
-
+  // cambia a lo nuevo de output
   @Output() onSearch = new EventEmitter<string>();
 
   constructor() { }

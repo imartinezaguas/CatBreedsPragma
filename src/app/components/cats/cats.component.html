@@ -1,9 +1,9 @@
 <app-filter-breeds (onSearch)="filterBreeds($event)"></app-filter-breeds>
-
+<!-- cambiar el ngFor por @for -->
 <ion-grid fixed>
   <ion-row>
-    <ion-col
-      *ngFor="let cat of filteredCats;"
+    @for (cat of filteredCats; track $index) {
+  <ion-col
       size="12"
       size-lg="3"
       size-md="4"
@@ -11,6 +11,7 @@
       size-xs="12"
     >
       <app-cat [cat]="cat"></app-cat>
-    </ion-col>
+   </ion-col>
+    }
   </ion-row>
 </ion-grid>
