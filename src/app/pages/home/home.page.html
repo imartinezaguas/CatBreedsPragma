@@ -1,10 +1,11 @@
 <ion-header [translucent]="true" mode="ios" class="ion-no-border">
   <ion-toolbar>
-    <ion-title> CatsBreeds </ion-title>
+    <ion-title>CatsBreeds</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-loading
+  class="cat-list__loading"
   [isOpen]="loading"
   message="Loading..."
   spinner="circles"
@@ -12,25 +13,23 @@
   backdropDismiss="false">
 </ion-loading>
 
-<ion-content (ionScroll)="handleScroll($event)" scrollEvents="true">
+<ion-content class="cat-list" (ionScroll)="handleScroll($event)" scrollEvents="true">
 
-  <app-cats [cats]="cats"></app-cats>
+  <app-cats class="cat-list__grid" [cats]="cats"></app-cats>
 
   <ion-infinite-scroll threshold="100px" (ionInfinite)="loadMoreBreeds($event)">
     <ion-infinite-scroll-content
       loadingSpinner="bubbles"
-      loadingText="Loading..."
-    >
+      loadingText="Loading...">
     </ion-infinite-scroll-content>
   </ion-infinite-scroll>
 
   <ion-fab
+    class="cat-list__fab"
     vertical="bottom"
     horizontal="end"
     slot="fixed"
-    *ngIf="showScrollButton"
-    style="bottom: 80px"
-  >
+    *ngIf="showScrollButton">
     <ion-fab-button (click)="scrollToTop()">
       <ion-icon name="arrow-up-outline"></ion-icon>
     </ion-fab-button>
