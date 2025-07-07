@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment.prod';
 import { CatsBreed } from '../interface/cats';
 import { catchError, map, Observable, throwError } from 'rxjs';
-import { API_LIMIT_ITEMS, API_PAGINATION } from '../constants/api.constants';
+import { API_LIMIT_ITEMS, API_PAGINATION, URL_BREEDS } from '../constants/api.constants';
 
 const API_KEY = environment.apiKey;
 const API_URL = environment.apiUrl;
@@ -46,7 +46,7 @@ export class CatsService {
   }
 
   public getBreeds(): Observable<CatsBreed[]> {
-    return this.executeQuery<CatsBreed[]>('/breeds', {
+    return this.executeQuery<CatsBreed[]>(`${URL_BREEDS}`, {
       limit: API_LIMIT_ITEMS,
       page: this.catsByPage.page,
     }).pipe(

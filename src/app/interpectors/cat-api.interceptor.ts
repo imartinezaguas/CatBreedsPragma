@@ -6,6 +6,8 @@ import { Observable } from 'rxjs';
 export class CatApiInterceptor implements HttpInterceptor{
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
 
+
+
     return next.handle(req)
   }
 }
